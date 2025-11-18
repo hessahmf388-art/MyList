@@ -221,13 +221,17 @@ function openTaskModal(editId) {
         modalTitle.textContent = "Add New Task";
     }
 
-    modal.style.display = "flex";
+modal.style.display = "block";
 }
 
 function closeTaskModal() {
     const modal = document.getElementById("taskModal");
     if (modal) modal.style.display = "none";
+
+    const backdrop = document.querySelector(".modal-backdrop");
+    if (backdrop) backdrop.style.display = "none";
 }
+
 
 function toggleReminderOptions() {
     const chk = document.getElementById("taskReminder");
@@ -288,8 +292,10 @@ function saveTask() {
     renderTasks();
     updateTaskProgress();
     scheduleReminders();
-    closeTaskModal();
-    closeAllModals();
+   closeTaskModal();
+closeAllModals();
+document.querySelector(".modal-backdrop").style.display = "none";
+
 }
 
 /* عرض قائمة المهام */
@@ -358,7 +364,7 @@ let deleteIdTemp = null;
 function openDeleteModal(id) {
     deleteIdTemp = id;
     const modal = document.getElementById("deleteModal");
-    if (modal) modal.style.display = "flex";
+    if (modal) modal.style.display = "block";
 }
 
 function closeDeleteModal() {
