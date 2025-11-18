@@ -41,6 +41,7 @@ function saveCurrentUserData() {
     localStorage.setItem(KEY_USER_PREFIX + currentUser.email, JSON.stringify(currentUser));
 }
 
+
 /* إشعار علوي (إضافة/تعديل/حذف/تذكير) */
 function showAlert(message, color = "#4CAF50", isReminder = false) {
 
@@ -282,6 +283,7 @@ function saveTask() {
     updateTaskProgress();
     scheduleReminders();
     closeTaskModal();
+    closeAllModals();
 }
 
 /* عرض قائمة المهام */
@@ -368,6 +370,8 @@ function confirmDeleteTask() {
     scheduleReminders();
     showAlert("Task deleted", "#d93025");
     closeDeleteModal();
+    closeAllModals();
+
 }
 
 /* التقدم – (النسبة + تعبئة الدائرة) */
