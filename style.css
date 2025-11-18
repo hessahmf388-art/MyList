@@ -1,0 +1,583 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#bba8ff,#e8ddff);
+}
+
+.page-container{
+    max-width:900px;
+    margin:90px auto 40px auto;
+    padding:0 16px;
+}
+
+.card{
+    background:rgba(255,255,255,0.95);
+    border-radius:14px;
+    padding:22px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:12px;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    max-width:960px;
+    background:rgba(255,255,255,0.45);
+    backdrop-filter:blur(12px);
+    border-radius:14px;
+    padding:10px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:50;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-title{
+    font-size:18px;
+    font-weight:700;
+    color:#3b2f73;
+}
+
+.nav-center{
+    display:flex;
+    gap:12px;
+}
+
+.nav-link{
+    font-size:13px;
+    padding:6px 12px;
+    border-radius:999px;
+    text-decoration:none;
+    color:#4b3c7d;
+}
+
+.nav-link:hover{ background:white; }
+
+.nav-link.active{
+    background:#8b6cfc;
+    color:white;
+}
+
+.profile-btn{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:2px solid #fff;
+    overflow:hidden;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.profile-btn img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-primary{
+    background:#8b6cfc;
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:10px 16px;
+    cursor:pointer;
+}
+
+.btn-secondary{
+    background:#fff;
+    border:1px solid #d4c8ff;
+    color:#4b3c7d;
+    padding:10px 16px;
+    border-radius:999px;
+    cursor:pointer;
+}
+
+.btn-danger{
+    background:#d93025;
+    color:#fff;
+    border:none;
+    padding:10px 16px;
+    border-radius:999px;
+    cursor:pointer;
+}
+
+.full-btn{
+    width:100%;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-field{
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #d5caff;
+    margin-bottom:12px;
+    font-size:14px;
+    background:white;
+}
+
+textarea{
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #d5caff;
+    margin-bottom:12px;
+    resize:vertical;
+}
+
+/* =========================================================
+   HIDE BROWSER DEFAULT PASSWORD EYE
+========================================================= */
+
+input[type="password"]::-ms-clear,
+input[type="password"]::-ms-reveal{
+    display:none !important;
+}
+
+input[type="password"]::-webkit-textfield-decoration-container{
+    display:none !important;
+}
+
+/* =========================================================
+   OUR CUSTOM EYE ICON
+========================================================= */
+
+.pwd-wrap{
+    position:relative;
+}
+
+
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.alert-box{
+    position:fixed;
+    top:55px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:10px 18px;
+    border-radius:14px;
+    background:#4caf50;
+    color:white;
+    font-size:14px;
+    display:flex;
+    gap:10px;
+    z-index:100;
+}
+
+.alert-close{
+    background:none;
+    border:none;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* =========================================================
+   START PAGE
+========================================================= */
+
+.start-container{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.start-box{
+    background:rgba(255,255,255,0.95);
+    border-radius:20px;
+    padding:30px 40px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+.start-title{
+    font-size:32px;
+    font-weight:700;
+    color:#3b2f73;
+    margin-bottom:6px;
+}
+
+.start-desc{
+    font-size:14px;
+    color:#6d6298;
+    margin-bottom:18px;
+}
+
+/* =========================================================
+   TASKS PAGE
+========================================================= */
+
+.tasks-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+@media(min-width:992px){
+    .tasks-wrapper{
+        flex-direction:row;
+        align-items:stretch;
+    }
+    .task-list-card{ flex:2; }
+    .progress-card{ flex:1; }
+}
+
+.task-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.task-card{
+    background:white;
+    border:1px solid #e1d8ff;
+    padding:12px;
+    border-radius:12px;
+    display:flex;
+    gap:12px;
+}
+
+.task-title{
+    font-size:14px;
+    font-weight:600;
+    color:#3e3470;
+}
+
+.task-title.done{
+    text-decoration:line-through;
+    color:#aaa7c9;
+}
+
+.task-desc{
+    font-size:12px;
+    color:#7c71a4;
+    margin-top:3px;
+}
+
+.task-meta{
+    font-size:11px;
+    color:#9a8fc6;
+    margin-top:4px;
+}
+
+.task-right{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+}
+
+.icon-btn{
+    background:none;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* زر الإضافة */
+.add-btn{
+    position:fixed;
+    bottom:28px;
+    right:28px;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:#8b6cfc;
+    color:white;
+    font-size:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.18);
+}
+
+.hidden{
+display: none !important;
+}
+
+/* =========================================================
+   PROGRESS CIRCLE
+========================================================= */
+
+.progress-card{
+    text-align:center;
+}
+
+.progress-title{
+    font-size:14px;
+    color:#7b719f;
+    margin-bottom:6px;
+}
+
+.progress-circle{
+    --p:0%;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:conic-gradient(#8b6cfc var(--p),#e3dbff 0);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:10px auto 6px auto;
+}
+
+.progress-inner{
+    width:86px;
+    height:86px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    font-weight:700;
+    color:#3b2f73;
+}
+
+.task-progress-box{
+    font-size:13px;
+    color:#6a5ea0;
+}
+
+/* =========================================================
+   ANALYTICS
+========================================================= */
+
+.analytics-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.analytics-box{
+    background:white;
+    border-radius:12px;
+    padding:12px;
+    border:1px solid #e2d9ff;
+    text-align:center;
+}
+
+.analytics-label{
+    font-size:12px;
+    color:#7b719f;
+}
+
+.analytics-value{
+    font-size:20px;
+    font-weight:700;
+    color:#3b2f73;
+}
+
+.chart-body{
+    background:white;
+    border-radius:12px;
+    border:1px solid #e1d8ff;
+    padding:12px;
+    margin-top:6px;
+}
+
+.chart-bars{
+    display:flex;
+    align-items:flex-end;
+    gap:6px;
+    height:150px;
+}
+
+.chart-bar-wrap{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.chart-bar{
+    width:10px;
+    background:linear-gradient(180deg,#8b6cfc,#c9baff);
+    border-radius:8px 8px 0 0;
+    position:relative;
+}
+
+.chart-bar-value{
+    position:absolute;
+    top:-16px;
+    font-size:10px;
+    color:#3b2f73;
+}
+
+.chart-labels{
+    display:flex;
+    justify-content:space-between;
+    font-size:10px;
+    color:#7b719f;
+    margin-top:6px;
+}
+
+/* =========================================================
+   ABOUT - CONTACT
+========================================================= */
+
+.about-text{
+    font-size:14px;
+    line-height:1.7;
+    color:#5d518a;
+    text-align:center;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
+    margin-top:14px;
+}
+
+.contact-card{
+    background:white;
+    border-radius:10px;
+    padding:14px;
+    text-align:center;
+    border:1px solid #e1d8ff;
+    font-size:13px;
+}
+
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+.auth-tabs{
+    display:flex;
+    gap:10px;
+    margin-bottom:16px;
+}
+
+.auth-tab{
+    flex:1;
+    padding:8px;
+    border-radius:999px;
+    border:1px solid #d4c8ff;
+    background:#fff;
+    cursor:pointer;
+    color:#4b3c7d;
+    text-align:center;
+    font-size:14px;
+}
+
+.auth-tab.active{
+    background:#8b6cfc;
+    color:white;
+}
+
+.profile-avatar-big{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:white;
+    border:2px solid #d9ceff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+    margin:0 auto 12px;
+    overflow:hidden;
+}
+
+.profile-avatar-big img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.account-card{
+    text-align:center;
+}
+
+.acc-name{
+    font-size:20px;
+    font-weight:700;
+    color:#3b2f73;
+}
+
+.acc-email{
+    font-size:13px;
+    color:#786da1;
+    margin-bottom:14px;
+}
+
+.edit-profile-btn{
+    background:none;
+    border:none;
+    color:#8b6cfc;
+    font-size:14px;
+    cursor:pointer;
+    margin-bottom:16px;
+}
+
+.account-actions{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.modal-backdrop{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:40;
+}
+
+.modal{
+    background:white;
+    padding:20px;
+    width:95%;
+    max-width:420px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:768px){
+    .tasks-wrapper{
+        grid-template-columns:1fr;
+    }
+}

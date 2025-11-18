@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My List - About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-title">My List</div>
+
+        <div class="nav-center">
+            <a href="tasks.html" class="nav-link">Tasks</a>
+            <a href="analytics.html" class="nav-link">Analytics</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="about.html" class="nav-link active">About</a>
+        </div>
+
+        <button class="profile-btn" onclick="location.href='profile.html'">
+            <span id="navAvatarEmoji">👤</span>
+        </button>
+    </nav>
+
+    <div class="page-container">
+        <div class="card">
+            <div style="text-align:center;margin-bottom:14px;font-size:32px;">ℹ️</div>
+            <h2 style="text-align:center;font-size:20px;color:#3b2f73;margin-bottom:8px;">About My List</h2>
+            <p class="about-text">
+                My List is a simple web-based to-do list designed for students to practice HTML, CSS,
+                JavaScript and PHP concepts. You can create tasks, set due dates and reminders,
+                track your progress and analyze your productivity over time.
+            </p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>initShared();</script>
+</body>
+</html>
