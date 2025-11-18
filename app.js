@@ -161,6 +161,12 @@ function scheduleReminders() {
     });
 }
 
+function closeAllModals() {
+    document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
+    const backdrop = document.querySelector(".modal-backdrop");
+    if (backdrop) backdrop.style.display = "none";
+}
+
 /* =========================================================
    TASKS PAGE
 ========================================================= */
